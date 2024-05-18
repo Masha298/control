@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+    <style>
+
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    </style>
+</head>
+<body>
+<table class = heading>
+    <thead>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Position</td>
+    <td>Age</td>
+    <td>Sex</td>
+    <td>Balance</td>
+    <td>Background</td>
+    <td>Public Background</td>
+    <td>Security</td>
+    <td>Medical</td>
+    <td>Psychology</td>
+    <td>Last Available</td>
+    <td>User Settings</td>
+    </thead>
+    <tbody class = cell>
+    <tr th:each="user : ${users}">
+        <td th:text = "${user.id}"></td>
+        <td th:text ="${user.userName}"></td>
+        <td th:text ="${user.positionOnStarship}"></td>
+        <td th:text ="${user.age}"></td>
+        <td th:text ="${user.sex}"></td>
+        <td th:text ="${user.balance}"></td>
+        <td th:text ="${user.background}"></td>
+        <td th:text ="${user.publicBackground}"></td>
+        <td th:text ="${user.securityBackground}"></td>
+        <td th:text ="${user.medicalBackground}"></td>
+        <td th:text ="${user.psychologyBackground}"></td>
+        <td th:text ="${user.lastAvailable}"></td>
+        <td th:text ="${user.userSettings}"></td>
+    </tr>
+    </tbody>
+</table><br><br>
+<table class = heading>
+    <thead>
+    <td>Title</td>
+    <td>Text</td>
+    <td>PersonID</td>
+    <td>Reward</td>
+    <td>Penalty</td>
+    <td>Time of started</td>
+    <td>Time for quest in min</td>
+    <td>Place id</td>
+    <td>Model id</td>
+    <td>Level difficulty</td>
+    <td>Quest status</td>
+    <td>Quest id</td>
+    </thead>
+    <tbody class = cell>
+    <tr th:each="quest : ${quests}">
+        <td th:text = "${quest.questTitle}"></td>
+        <td th:text ="${quest.questText}"></td>
+        <td th:text ="${quest.personId}"></td>
+        <td th:text ="${quest.reward}"></td>
+        <td th:text ="${quest.penalty}"></td>
+        <td th:text ="${quest.timeOfStarted}"></td>
+        <td th:text ="${quest.timeForQuestInMinutes}"></td>
+        <td th:text ="${quest.placeId}"></td>
+        <td th:text ="${quest.modelId}"></td>
+        <td th:text ="${quest.levelDifficulty}"></td>
+        <td th:text ="${quest.questStatus}"></td>
+        <td th:text ="${quest.id}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
